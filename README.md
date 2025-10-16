@@ -39,8 +39,7 @@
         - [**Nombre y configuración de red**](#nombre-y-configuración-de-red-1)
         - [**Cuentas administradoras**](#cuentas-administradoras-1)
       - [1.2.2 **Navegadores**](#122-navegadores)
-      - [1.2.3 **MobaXTerm**](#123-mobaxterm)
-        - [Conexion al servidor](#conexion-al-servidor)
+      - [1.2.3 **FileZilla**](#123-filezilla)
       - [1.2.4 **Netbeans**](#124-netbeans)
       - [1.2.5 **Visual Studio Code**](#125-visual-studio-code)
   - [2. GitHub](#2-github)
@@ -278,7 +277,7 @@ ls -l
 ```
 Y creamos el usuario operador web
 ```bash
-Sudo useradd –M –d /var/www/html -N –g www-data –s /bin/bash operadorweb 
+sudo useradd –M –d /var/www/html -N –g www-data –s /bin/bash operadorweb 
 ```
 Comprobacion (cambiar passwd por group si queremos comprobar el grupo)
 ```bash
@@ -301,6 +300,15 @@ En /etc/apache2/site-available/000-default.conf añadimos la siguiente linea
 ErrorLog /var/www/html/error/error.log
 ```
 
+Tenemos que crear esa carpeta de error ahora
+
+Ahora debemos modificar el fichero apache2.conf que se encuentra en el directorio /etc/apache2, en el apartado
+de 'Directory /var/www'.
+```bash
+AllowOverride All
+```
+
+
 ##### Virtual Hosts
 ##### Permisos y usuarios
 
@@ -309,41 +317,26 @@ Instalación de PHP
 Update y upgrade
 Despues de la instalacion de apache, ejecutamos el comando
 ```bash
-sudo apt install software-properties-common -y
- 
-sudo add-apt-repository ppa:ondrej/php -y
- 
-ls /etc/apt/sources.list.d/ | grep ondrej
- 
-```
-Y después hacemos update para actualizar los repositorios
-
-Para instalar PHP
-```bash
-sudo apt install libapache2-mod-php8.3 php8.3-fpm -y
-```
-Y habilitmaos el modulo
-```bash
-sudo a2enmod proxy_fcgi
-```
-Desabilitamos los siguientes modulos
-```bash
-sudo a2dismod mpm_prefork
- 
-sudo a2dismod php8.3
- 
-sudo a2dismod mpm_prefork
-```
-Volvemos a habilitar 
-```bash
-sudo a2enmod mpm_event proxy_fcgi
- 
-sudo a2enconf php8.3-fpm
+sudo apt install php8.3-fpm php8.3
 ```
 Y reiniciamos
 ```bash
-sudo systemctl restart apache2
+sudo systemctl restart php8.3-fpm
 ```
+Habilitamos el modulo
+```bash
+sudo a2enmod proxy_fcgi
+```
+Y también habilitamos esto
+```bash
+sudo a2enconf php8.3-fpm
+```
+
+Podemos comprobarlo con
+```bash
+grep '^listen' /etc/php/8.3/fpm/pool.d/*.conf
+```
+O también
 Creamos un archivo info.php en /var/www/html con <?php phpinfo(); ?>
 Hacemos la comprobacion poniendo en el navegador nuestra dirección de la página/info.php
 #### 1.1.4 MySQL
@@ -366,6 +359,7 @@ Página de descarga
 https://mobaxterm.mobatek.net/download-home-edition.html
 ```
 Para conectarnos a nuestro servidor, en la seccion de "Session"
+
 ![Alt](images/home_moba.png)|
 
 Tanto para la conexion SSH como para la SFTP, solo debemos introducir la IP
@@ -388,12 +382,38 @@ PHP application from Remote Server
 ```
 Lo único que cambiamos en la primera pestaña es el nombre del proyecto, escribiendo el adecuado (el mismo que el de las carpetas)
 En la siguiente pestaña:
+
 ![Alt](images/urlNTB.png)|
+
 En "manage":
+
 ![Alt](images/manageNTB.png)|
+
 Si se han realizado los pasos correctamente, ya deberiamos de haber creado nuestro primer proyecto.
 
+# CFGS Desarrollo de Aplicaciones Web
+## Medidas de protección básicas
+### Autenticación Multifactor (MFA): 
+Método de seguridad para identificar a los usuarios, no dependiendo solo de una contraseña. 
+Se suele dividir en 3 partes: 1. Algo que el usuario sabe (contraseña), algo que el usuario tiene (teléfono) y 
+algo que el usuario es (identificación facial)  
 
+### Roles y permisos: 
+
+### Reglas de firewall:  
+
+### Firewall: Software pensado para impedir el tráfico de una red con otra (se toma en la capa de red, si fuera en la de transporte o la de aplicación es proxy porque mira el paquete) 
+
+### Filtrado de puertos y protocolos: 
+
+### Routers: Poner en contacto una red con otra 
+
+### Monitoreo: 
+
+### Auditoría: 
+
+## Analisis de los incidentes de seguridad
+### Ciclo de vida de un incidente:
 ---
 
 > **Álvaro García González**  
