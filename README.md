@@ -3,7 +3,7 @@
 
 |  CFGS DESARROLLO  DE APLICACIONES WEB |
 |:-----------:|
-|![Alt](images/portada.jpg)|
+|![Alt](webroot/images/portada.jpg)|
 | DESPLIEGUE DE APLCIACIONES WEB
 | CYBERSEGURIDAD
 | DAWES Tema 2. INSTALACIÓN, CONFIGURACIÓN Y DOCUMENTACIÓN DE ENTORNO DE DESARROLLO Y DEL ENTORNO DE EXPLOTACIÓN |
@@ -64,10 +64,10 @@ Cuando nos pregunte como se llamara nuestra cuenta, le decimos que miadmin con c
 Marcamos la casilla de instalar ssh
 
 Gestion de particiones
-![Alt](images/particion_paso1.png)
-![Alt](images/particion_paso2.png)
-![Alt](images/particion_paso3.png)
-![Alt](images/particion_paso4.png)
+![Alt](webroot/images/particion_paso1.png)
+![Alt](webroot/images/particion_paso2.png)
+![Alt](webroot/images/particion_paso3.png)
+![Alt](webroot/images/particion_paso4.png)
 ##### **Actualizar el sistema**
 
 ```bash
@@ -114,7 +114,7 @@ ip r
 resolvectl
 ```
 En mi ejemplo, mi IP seria 10.199.9.114
-![Alt](images/ip_a.png)
+![Alt](webroot/images/ip_a.png)
 Los otros datos se ven claramente con sus respectivos comandos
 
 
@@ -360,7 +360,7 @@ https://mobaxterm.mobatek.net/download-home-edition.html
 ```
 Para conectarnos a nuestro servidor, en la seccion de "Session"
 
-![Alt](images/home_moba.png)|
+![Alt](webroot/images/home_moba.png)|
 
 Tanto para la conexion SSH como para la SFTP, solo debemos introducir la IP
 del servidor y después el nombre de usuario (a recordar: operadorweb)
@@ -383,11 +383,11 @@ PHP application from Remote Server
 Lo único que cambiamos en la primera pestaña es el nombre del proyecto, escribiendo el adecuado (el mismo que el de las carpetas)
 En la siguiente pestaña:
 
-![Alt](images/urlNTB.png)|
+![Alt](webroot/images/urlNTB.png)|
 
 En "manage":
 
-![Alt](images/manageNTB.png)|
+![Alt](webroot/images/manageNTB.png)|
 
 Si se han realizado los pasos correctamente, ya deberiamos de haber creado nuestro primer proyecto.
 
