@@ -27,6 +27,7 @@
         - [Virtual Hosts](#virtual-hosts)
         - [Permisos y usuarios](#permisos-y-usuarios)
       - [1.1.3 PHP](#113-php)
+        -[1.1.3.1 Módulos para MariaDB](#1131-modulos-para-mariadb) 
       - [1.1.4 MySQL](#114-mysql)
       - [1.1.5 XDebug](#115-xdebug)
       - [1.1.6 Servidor web seguro (HTTPS)](#116-servidor-web-seguro-https)
@@ -339,7 +340,88 @@ grep '^listen' /etc/php/8.3/fpm/pool.d/*.conf
 O también
 Creamos un archivo info.php en /var/www/html con <?php phpinfo(); ?>
 Hacemos la comprobacion poniendo en el navegador nuestra dirección de la página/info.php
-#### 1.1.4 MySQL
+
+##### 1.1.3.1 Modulos para MariaDB
+
+Vamos a instalar un módulo para PHP que permite conectarse a la base de datos
+```bash
+sudo apt install php8.3-mysql
+sudo systemctl restart php8.3-fpm
+```
+Para comprobar la instalación
+```bash
+sudo php -m | grep mysql
+```
+|![Alt](webroot/images/php-m_mysql.png)|
+
+Otro módulo de PHP relacionado con la base de datos, esta vez una biblioteca de internacionalización 
+```bash
+sudo apt install php8.3-intl
+```
+Y reiniciamos el servicio
+```bash
+sudo systemctl restart php8.3-fpm
+```
+
+#### 1.1.4 MariaDB
+
+Primer paso, actualizar el sistema
+```bash
+sudo apt update
+```
+Instalamos mariaDB
+```bash
+sudo apt install mariadb-server
+```
+Abrimos el archivo de configuración (en /etc/mysql/mariadb.conf.d/50-server.cnf)
+```bash
+sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf
+```
+Y la linea "bin-address" que por defecto tendría el valor 127.0.0.1
+```bash
+bind-address = 0.0.0.0
+```
+Y reiniciamos el servicio
+```bash
+sudo systemctl restart mariadb
+```
+Si queremos comprobar que lo hemos hecho bien
+```bash
+sudo ss -punta |grep mariadb
+
+tcp   LISTEN  0  80  127.0.0.1:3306   0.0.0.0:*   users:(("mariadbd",pid=1234,fd=10))
+
+```
+
+Ahora abrimos el puerto 
+```bash
+sudo ufw allow 3306
+```
+
+Lo siguiente es entrar en la consola de mariadb
+```bash
+sudo mariadb
+```
+Y creamos el usuario
+```bash
+CREATE USER 'adminsql'@'%' IDENTIFIED BY 'paso'
+GRANT ALL ON *.* TO 'adminsql'@'%' WITH GRANT OPTION;
+```
+Una vez más, si queremos comprobar
+```bash
+SELECT User, Host FROM mysql.user;
+```
+Ahora ejecutamos un script de seguridad
+```bash
+sudo mysql_secure_installation
+```
+La primera pregunta es la contraseña de root que por defecto no tiene, asique pulsamos **enter** directamente.
+Después nos preguntara si queremos ponerle una contraseña a root. En mi caso si, **paso**.
+La tercera pregunra nos cuestionara sobre si deseamos eliminar los usuarios anonimos, decimos que si.
+La cuarta tratará si queremos desactivar el acceso remoto al usuario root, le decimos que si.
+La quinta nos preguntará si queremos elminar la base de datos **test**, en mi caso si.
+Y finalmente nos cuestiona si queremos recargar privilegios, y una vez más, afirmativo.
+
 #### 1.1.5 XDebug
 #### 1.1.6 Servidor web seguro (HTTPS)
 #### 1.1.7 DNS
