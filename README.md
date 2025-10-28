@@ -328,7 +328,7 @@ sudo ls /etc/ssl/certs | grep agg-used
 sudo ls /etc/ssl/private | grep agg-used
 ```
 
-![Alt](images/HTTPS1.PNG)|
+![Alt](webroot/images/HTTPS1.PNG)|
 
 Reiniciamos apache 2
 ```bash
@@ -339,11 +339,11 @@ Copiamos el archivo de configuracion en /etc/apache2/sites-available
 sudo cp default-ssl.conf agg-used.conf
 ```
 
-![Alt](images/HTTPS2.PNG)|
+![Alt](webroot/images/HTTPS2.PNG)|
 
 Ahora configuramos el archivo agg-used.conf. En las lineas de SSLCertificateFile y SSLCertificateKeyFile cambiamos el nombre de las claves por el nuestro
 
-![Alt](images/HTTPS3.PNG)|
+![Alt](webroot/images/HTTPS3.PNG)|
 
 Por último, activamos el sitio que acabamos de configurar y reiniciamos apache
 ```bash
