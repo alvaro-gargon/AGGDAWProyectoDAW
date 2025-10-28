@@ -28,7 +28,7 @@
         - [Permisos y usuarios](#permisos-y-usuarios)
       - [1.1.3 PHP](#113-php)
         -[1.1.3.1 Módulos para MariaDB](#1131-modulos-para-mariadb) 
-      - [1.1.4 MySQL](#114-mysql)
+      - [1.1.4 MariaDB](#114-mariadb)
       - [1.1.5 XDebug](#115-xdebug)
       - [1.1.6 Servidor web seguro (HTTPS)](#116-servidor-web-seguro-https)
       - [1.1.7 DNS](#117-dns)
