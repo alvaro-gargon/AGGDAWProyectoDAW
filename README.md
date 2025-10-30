@@ -511,6 +511,68 @@ sudo chown root:root /tmp/xdebug.log
 ```
 
 #### 1.1.6 Servidor web seguro (HTTPS)
+
+Comprobamos las actualizaciones y mejoras
+```bash
+sudo apt update
+sudo apt upgrade
+```
+
+Habilitamos el siguiente módulo
+```bash
+sudo a2enmod ssl
+```
+Creamos el certificado SSL (recomendado cambiar los nombres de los fiecheros .key y .crt)
+```bash
+sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/agg-used.key -out /etc/ssl/certs/agg-used.crt
+```
+Rellenamos la información
+```bash
+Country Name (2 letter code) [AU]:ES
+State or Province Name (full name) [Some-State]:ZAMORA
+Locality Name (eg, city) []:BENAVENTE
+Organization Name (eg, company) [Internet Widgits Pty Ltd]:IES LOS SAUCES
+Organizational Unit Name (eg, section) []:INFORMATICA
+Common Name (e.g. server FQDN or YOUR name) []:vg-used
+Email Address []:alvaro.gargon.4@educa.jcyl.es
+```
+Reinicio el servicio apache2
+```bash
+sudo systemctl restart apache2
+```
+Dentro de la carpeta /etc/apache2/sites-available/ hacemos una copia del archivo default-ssl
+```bash
+sudo cp default-ssl.conf agg-used.conf
+```
+Modificamos el fichero que acabamos de crear
+```bash
+sudo nano agg-used.conf
+```
+Lo modificamos para poner los nombres de los archivos bien
+```bash
+ #   SSLCertificateFile directive is needed.
+        SSLCertificateFile      /etc/ssl/certs/vg-used.crt
+        SSLCertificateKeyFile   /etc/ssl/private/apache-vg-used.key
+ #   Server Certificate Chain:
+```
+Y habilitamos el sitio que acabamos de modificar
+```bash
+sudo a2ensite agg-used.conf
+```
+Reiniciamos el servicio
+```bash
+sudo systemctl restart apache2
+```
+Abrimos el puerto 443
+```bash
+sudo ufw allow 443
+```
+Y borramos el puerto 443 v6 y si lo queremos el 80 (el de http que ya no usaremos)
+```bash
+sudo ufw status numbered
+sudo ufw delete numeroproceso
+```
+
 #### 1.1.7 DNS
 #### 1.1.8 SFTP
 #### 1.1.9 Apache Tomcat
