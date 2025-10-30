@@ -247,7 +247,7 @@ df -h
 fdisk -l
 ```
 
-#### 1.1.2 Instalación del servidor web
+#### 1.1.2 Apache HTTP
 ##### **Actualizar el sistema**
 
 ```bash
@@ -255,7 +255,7 @@ sudo apt update
 sudo apt upgrade
 ```
 ##### Instalación
-Instalamos apache https
+Instalamos apache http
 ```bash
 sudo apt install apache2
 ```
