@@ -474,6 +474,42 @@ La quinta nos preguntará si queremos elminar la base de datos **test**, en mi c
 Y finalmente nos cuestiona si queremos recargar privilegios, y una vez más, afirmativo.
 
 #### 1.1.5 XDebug
+
+Verificación de si esta instalado
+```bash
+sudo php -m | grep xdebug
+```
+Si no lo tienes y necesitas instalarlo
+```bash
+sudo apt isntall php8.3-xdebug
+```
+Editamos el fichero de configuracion
+```bash
+sudo nano /etc/php/8.3/fpm/conf.d/20-xdebug.ini
+```
+Y agregamos las siguiente líneas SIN quitar la que viene por defecto
+```bash
+xdebug.mode=develop,debug
+xdebug.start_with_request=yes
+xdebug.client_host=127.0.0.1
+xdebug.client_port=9003
+xdebug.log=/tmp/xdebug.log
+xdebug.log_level=7
+xdebug.idekey="netbeans-xdebug"
+xdebug.discover_client_host=1
+```
+Reiniciamos los servicios
+```bash
+sudo systemctl restart apache2
+sudo systemctl restart php8.3-fpm
+```
+Permisos para los logs
+```bash
+sudo touch /tmp/xdebug.log
+sudo chmod 666 /tmp/xdebug.log
+sudo chown root:root /tmp/xdebug.log
+```
+
 #### 1.1.6 Servidor web seguro (HTTPS)
 #### 1.1.7 DNS
 #### 1.1.8 SFTP
