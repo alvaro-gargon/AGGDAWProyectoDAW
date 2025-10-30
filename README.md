@@ -26,7 +26,7 @@
         - [Verficación del servicio](#verficación-del-servicio)
         - [Virtual Hosts](#virtual-hosts)
         - [Permisos y usuarios](#permisos-y-usuarios)
-      - [1.1.3 PHP](#113-php)
+      - [1.1.3 PHP-FPM](#113-php-fpm)
         -[1.1.3.1 Módulos para MariaDB](#1131-modulos-para-mariadb) 
       - [1.1.4 MariaDB](#114-mariadb)
       - [1.1.5 XDebug](#115-xdebug)
@@ -364,7 +364,7 @@ sudo ufw delete x
 ##### Virtual Hosts
 ##### Permisos y usuarios
 
-#### 1.1.3 PHP
+#### 1.1.3 PHP-FPM
 Instalación de PHP
 Update y upgrade
 Despues de la instalacion de apache, ejecutamos el comando
