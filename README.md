@@ -491,7 +491,7 @@ sudo mariadb
 ```
 Y creamos el usuario
 ```bash
-CREATE USER 'adminsql'@'%' IDENTIFIED BY 'paso'
+CREATE USER 'adminsql'@'%' IDENTIFIED BY 'paso';
 GRANT ALL ON *.* TO 'adminsql'@'%' WITH GRANT OPTION;
 ```
 Una vez más, si queremos comprobar
