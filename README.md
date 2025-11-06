@@ -360,6 +360,18 @@ sudo ufw status numbered
 sudo ufw delete x
 ```
 
+Por último, hacemos el redireccionamiento
+Activamos el módulo
+```bash
+sudo a2enmod rewrite
+```
+Y en el archivo .htaccess, escribimos: 
+```bash
+RewriteEngine On
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^(.*)$ https://10.199.8.153/$1 [R,L]
+```
+
 ##### Virtual Hosts
 ##### Permisos y usuarios
 
