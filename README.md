@@ -372,6 +372,28 @@ RewriteCond %{SERVER_PORT} 80
 RewriteRule ^(.*)$ https://10.199.8.153/$1 [R,L]
 ```
 
+##### XDebug
+Instalamos 
+```bash
+sudo apt install php8.3-xdebug
+```
+En el archivo /etc/php/8.3/fpm/conf.d/20-xdebug.ini , añadimos 
+```bash
+#No quitar la primera linea
+xdebug.mode=develop,debug
+xdebug.start_with_request=yes
+xdebug.client_host=127.0.0.1
+xdebug.client_port=9003
+xdebug.log=/tmp/xdebug.log
+xdebug.log_level=7
+xdebug.idekey="netbeans-xdebug"
+xdebug.discover_client_host=1
+```
+Finalmente reinicimos el servicio
+```bash
+sudo systemctl restart php8.3-fpm
+```
+
 ##### Virtual Hosts
 ##### Permisos y usuarios
 
