@@ -1,4 +1,5 @@
-- [1.1 Ubuntu Server 24.04.3 LTS](#11-ubuntu-server-24043-lts)
+- [1. Entorno de Desarrollo](#1-entorno-de-desarrollo)
+    - [1.1 Ubuntu Server 24.04.3 LTS](#11-ubuntu-server-24043-lts)
       - [1.1.1 **Configuración inicial**](#111-configuración-inicial)
       - [**Instalacion de la maquina**](#instalacion-de-la-maquina)
         - [**Actualizar el sistema**](#actualizar-el-sistema)
