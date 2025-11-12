@@ -13,10 +13,10 @@ PHP application from Remote Server
 Lo único que cambiamos en la primera pestaña es el nombre del proyecto, escribiendo el adecuado (el mismo que el de las carpetas)
 En la siguiente pestaña:
 
-![Alt](../webroot/images/urlNTB.png)|
+![Alt](webroot/images/urlNTB.png)|
 
 En "manage":
 
-![Alt](../webroot/images/manageNTB.png)|
+![Alt](webroot/images/manageNTB.png)|
 
 Si se han realizado los pasos correctamente, ya deberiamos de haber creado nuestro primer proyecto.
