@@ -2,15 +2,15 @@
 
 - [1.2 Windows 11](#12-windows-11)
  
-        - [1.2.1 **Configuración inicial**](#121-configuración-inicial)
+- [1.2.1 **Configuración inicial**](#121-configuración-inicial)
   
-                - [**Nombre y configuración de red**](#nombre-y-configuración-de-red-1)
+  - [**Nombre y configuración de red**](#nombre-y-configuración-de-red-1)
   
-                - [**Cuentas administradoras**](#cuentas-administradoras-1)
+    - [**Cuentas administradoras**](#cuentas-administradoras-1)
   
-        - [1.2.2 **Navegadores**](#122-navegadores)
-  
-        - [1.2.3 **MobaXTerm**](#123-MobaXTerm)
+    - [1.2.2 **Navegadores**](#122-navegadores)
+
+  - [1.2.3 **MobaXTerm**](#123-MobaXTerm)
 
 ### 1.2 Windows 11
 #### 1.2.1 **Configuración inicial**
