@@ -1,3 +1,7 @@
+- [3.Entorno de Explotación](#3entorno-de-explotación)
+    - [Apache NetBeans IDE22](#apache-netbeans-ide22)
+      - [Para crear un nuevo proyecto](#para-crear-un-nuevo-proyecto)
+        
 ## 3.Entorno de Explotación
 ### Apache NetBeans IDE22
 La página de descarga de nuestro NetBeans, en la version que usamos.
