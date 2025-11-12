@@ -1,3 +1,4 @@
+-[Volver](README.md)
 - [1. Entorno de Desarrollo](#1-entorno-de-desarrollo)
     - [1.1 Ubuntu Server 24.04.3 LTS](#11-ubuntu-server-24043-lts)
       - [1.1.1 **Configuración inicial**](#111-configuración-inicial)
@@ -516,7 +517,10 @@ La tercera pregunra nos cuestionara sobre si deseamos eliminar los usuarios anon
 La cuarta tratará si queremos desactivar el acceso remoto al usuario root, le decimos que si.
 La quinta nos preguntará si queremos elminar la base de datos **test**, en mi caso si.
 Y finalmente nos cuestiona si queremos recargar privilegios, y una vez más, afirmativo.
-####Virtual Hosting
+
+
+#### Virtual Hosting
+
 1 DNS 
 2 SFTP (usuarioenjaulado1 home /var/www/usuarioenjaulado1) dentro, carpeta httpdocs y carpeta error (comprobar en estas dos carpetas permisos y propietarios)
 3 hacer (mismo nombre que dns) y sudo nano (capturas en chat personal)
