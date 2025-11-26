@@ -53,3 +53,7 @@ El tercer numero es para el resto de cambios
 Ejemplo de una aplicación que ya ha salido: V1.10.17
 
 Volviendo a nuestra release, si queremos le añadiremos una descripción, y ya estaría listo. Solo debemos darle a "Publish release"
+
+
+como nos hemos conectado al plesk con ssh. En la carpeta .ssh (al mismo nivel que httpdocs) añadimos un archivo llamado authorized_keys y dentro poner la clave publica (recordar que lo hemos hecho en github)
+Despues al conectarnos por sftp a traves de moba, le damos a opciones avanzadas y marcamos la casilla de usar la clave privada y despues pones la ruta donde se ubica
