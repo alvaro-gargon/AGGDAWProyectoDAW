@@ -23,6 +23,7 @@
       - [1.1.8 SFTP](#118-sftp)
       - [1.1.9 Apache Tomcat](#119-apache-tomcat)
       - [1.1.10 LDAP](#1110-ldap)
+      - [1.1.11 PHPMyAdmin](#1111-phpmyadmin)
 
 ### 1.1 Ubuntu Server 24.04.3 LTS
 
@@ -519,9 +520,122 @@ La quinta nos preguntará si queremos elminar la base de datos **test**, en mi c
 Y finalmente nos cuestiona si queremos recargar privilegios, y una vez más, afirmativo.
 
 
-#### Virtual Hosting
+#### 1.1.7 DNS 
 
-1 DNS 
-2 SFTP (usuarioenjaulado1 home /var/www/usuarioenjaulado1) dentro, carpeta httpdocs y carpeta error (comprobar en estas dos carpetas permisos y propietarios)
-3 hacer (mismo nombre que dns) y sudo nano (capturas en chat personal)
-4 comprobar en web (esta hecho para que funcione solo con http)
+Para realizar redirecciones a través del DNS, entramos en Plesk y nos dirigiremos a **sitios web y dominios**, y después en Hosting y DNS
+
+![Alt](webroot/images/dns1.JPG)
+
+Clicamos en DNS y en Añadir registro.
+Dentro solo tendremos que rellenar con los datos necesarios
+
+Ahora debemos configurar nuestro servidor.
+Primero realiazmos una copia del fichero /etc/apache2/sites-available/000-default.conf
+```bash
+sudo cp 000-default sitio1-alvarogargon-ieslossauces-es.conf
+```
+
+Ahora modificaremos el archivo
+<!-- Agradecimento a Vero por la imagen-->
+![Alt](webroot/images/dns2.png)
+
+Una vez hecho, habilitamos el sitio
+```bash
+sudo a2ensite sitio1-alvarogargon-ieslossauces-es.conf
+```
+Y recargamos apache
+```bash
+sudo systemctl reload apache2
+```
+
+Para comprobar cuantos sitios activos tenemos (solo debe de haber 3)
+```bash
+apache2ctl -S
+```
+
+#### 1.1.8 SFTP 
+Creación de usuarios enjaulados
+
+Creamos un grupo para los usuarios enjaulados
+```bash
+sudo groupadd sftpusers
+```
+
+Creamos el usuario con el home en su carpeta y le añadimos una contraseña
+```bash
+sudo useradd -g www-data -G sftpusers -m -d /var/www/usuarioenjaulado1 usuarioenjaulado1
+sudo passwd usuarioenjaulado1
+```
+
+Cambiamos los permisos y propietario del home del usuario enjaulado a root
+```bash
+sudo chown root:root /var/www/usuarioenjaulado1
+sudo chmod 555 /var/www/usuarioenjaulado1
+```
+
+Ahora, creamos una carpeta en la cual el usuario enjaulado si pueda escribir
+```bash
+sudo mkdir /var/www/usuarioenjaulado1/httpdocs
+sudo chmod 775 -R /var/www/usuarioenjaulado1/httpdocs
+sudo chown usuarioenjaulado1:www-data -R /var/www/usuarioenjaulado1/httpdocs
+```
+
+Posteriormente, hacemos una copia del archivo de configuración ssh
+```bash
+sudo cp /etc/ssh/sshd_config /etc/ssh/sshd_configBK20251106
+```
+
+Y lo modificamos para que quede asi
+```bash
+Subsystem sftp internal-sftp
+Match Group sftpusers
+ChrootDirectory %h
+ForceCommand internal-sftp -u 2
+AllowTcpForwarding yes
+PermitTunnel no
+X11Forwarding no
+```
+
+Reiniciamos ssh
+```bash
+sudo systemctl restart ssh
+```
+
+#### 1.1.11 PHPMyAdmin
+Se ha seguido el siguiente tutorial: https://www.devtutorial.io/how-to-install-phpmyadmin-with-apache-on-ubuntu-24-04-p3467.html 
+
+Nos aseguramos de tener el dispositivo actualizado e instalamos PHPMyAdmin
+
+```bash
+sudo apt update
+sudo apt install phpmyadmin
+```
+
+Nos saltara una centana de configuración (para aceptar debemos usar el espacio)
+1.Elegir apache
+
+![Alt](webroot/images/myadmin1.png)
+
+2.Si crear la base de datos
+
+![Alt](webroot/images/myadmin2.png)
+
+3.Elegimos contraseña
+
+![Alt](webroot/images/myadmin3.png)
+
+Para la configuración, debemos crear un enlace simbolico
+```bash
+sudo ln -sf /etc/phpmyadmin/apache.conf /etc/apache2/conf-available/phpmyadmin.conf
+```
+
+Habilitamos la configuracion de PHPMyAdmin y reiniciamos apache
+```bash
+sudo a2enconf phpmyadmin
+sudo systemctl restart apache2
+```
+
+Para comprobar su funcionamiento, escribiremos nuestra ip/phpmyadmin
+Deberia salirnos un forumlario de inicio de sesion
+
+![Alt](webroot/images/myadmin4.png)
