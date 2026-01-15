@@ -11,9 +11,9 @@
 
 -[Cliente de desarrollo](ClientedeDesarrollo.md)
 
--[Entorno de explotación](entornoExplotacion.md)
-
 -[Git y GitHub](Git.md)
+
+-[Entorno de explotación](entornoExplotacion.md)
 
 ---
 
