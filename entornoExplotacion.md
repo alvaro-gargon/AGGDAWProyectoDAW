@@ -27,9 +27,7 @@ Esto dara paso una un login donde deberás introducir tu usario y contraseña
 # Subdominios
 Es muy probables que necesites el uso de subdominios, ya que te permiten tener webs distintas en el mismo servidor
 El proceso de creacion es relativamente sencillo
-En la primera página nada más entrar (que es el apartado de sitios webs y dominios)
-
-![Alt](webroot/images/botonAnadirSubdomino.png)|
+En la primera página nada más entrar (que es el apartado de sitios webs y dominios), le das ha añadir subdominio
 
 Posteriormente nos pedira que le pongamos nombre y la raiz del documento.
 RECOMENDACION: usa el mismo nombre en ambos
