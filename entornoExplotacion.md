@@ -29,7 +29,7 @@ Es muy probables que necesites el uso de subdominios, ya que te permiten tener w
 El proceso de creacion es relativamente sencillo
 En la primera página nada más entrar (que es el apartado de sitios webs y dominios)
 
-![Alt](webroot/images/botonAñadirSubdomino.png)|
+![Alt](webroot/images/botonAnadirSubdomino.png)|
 
 Posteriormente nos pedira que le pongamos nombre y la raiz del documento.
 RECOMENDACION: usa el mismo nombre en ambos
