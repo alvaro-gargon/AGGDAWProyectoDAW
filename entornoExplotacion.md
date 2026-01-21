@@ -36,7 +36,7 @@ Foto de ejemplo:
 
 ![Alt](webroot/images/nombreDominio.png)|
 
-#Subir archivos
+# Subir archivos
 Aunque es posible, **no es aconsejable subir archivos desde la propia pagina de plesk**
 Para subir archivos, usar alguna herramienta que te permita subir los archivos a traves de SFTP (como hacerlo con [MobaXterm](https://alvarogargon.ieslossauces.es/AGGCIBProyectoCIB/doc/pasoProduccionAExplotacion.pdf) por ejemplo)
 
