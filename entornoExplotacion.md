@@ -97,3 +97,10 @@ Una vez allí, escribiremos nuestro correo y las opciones que deseemos
 Nos saltará un aviso para que hagamos el registro, debemos copiar el nombre del domino y el registro 
 
 ![Alt](webroot/images/añadirRegistro.png)|
+
+¿Como añadir un registro?
+Nos dirigimos a nuesto subdomino, en el apartado "Hosting y DNS" y clicamos en el icono de DNS
+
+![Alt](webroot/images/DNS.png)|
+
+Ahi le daremos a añadir registro, eligiremos del tipo TXT (nos lo dicen en la foto de hace 2 pasos) y rellenaremos con los datos que nos dieron hace 2 pasos (es decir el nombre del dominio y el registro TXT) 
