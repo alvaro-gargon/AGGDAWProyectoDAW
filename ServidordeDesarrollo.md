@@ -9,17 +9,17 @@
         - [**Cuentas administradoras**](#cuentas-administradoras)
         - [**Habilitar cortafuegos**](#habilitar-cortafuegos)
         - [**Comandos particiones**](#comandos-particiones)
-      - [1.1.2 Instalación del servidor web](#112-instalación-del-servidor-web)
+      - [1.1.2 Apache HTTP](#112-apache-http)
         - [**Actualizar el sistema**](#actualizar-el-sistema-1)
         - [Instalación](#instalación)
         - [Verficación del servicio](#verficación-del-servicio)
+        - [Configuracion DNS](#configuracion-dns)
         - [Virtual Hosts](#virtual-hosts)
         - [Permisos y usuarios](#permisos-y-usuarios)
       - [1.1.3 PHP-FPM](#113-php-fpm)
         -[1.1.3.1 Módulos para MariaDB](#1131-modulos-para-mariadb) 
       - [1.1.4 MariaDB](#114-mariadb)
       - [1.1.6 Servidor web seguro (HTTPS)](#116-servidor-web-seguro-https)
-      - [1.1.7 DNS](#117-dns)
       - [1.1.8 SFTP](#118-sftp)
       - [1.1.9 Apache Tomcat](#119-apache-tomcat)
       - [1.1.10 LDAP](#1110-ldap)
@@ -370,6 +370,31 @@ Finalmente reinicimos el servicio
 sudo systemctl restart php8.3-fpm
 ```
 
+##### Configuracion DNS
+
+Primero realiazmos una copia del fichero /etc/apache2/sites-available/000-default.conf
+```bash
+sudo cp 000-default sitio1-alvarogargon-ieslossauces-es.conf
+```
+
+Ahora modificaremos el archivo
+<!-- Agradecimento a Vero por la imagen-->
+![Alt](webroot/images/dns2.png)
+
+Una vez hecho, habilitamos el sitio
+```bash
+sudo a2ensite sitio1-alvarogargon-ieslossauces-es.conf
+```
+Y recargamos apache
+```bash
+sudo systemctl reload apache2
+```
+
+Para comprobar cuantos sitios activos tenemos (solo debe de haber 3)
+```bash
+apache2ctl -S
+```
+
 ##### Virtual Hosts
 ##### Permisos y usuarios
 
@@ -519,39 +544,6 @@ La cuarta tratará si queremos desactivar el acceso remoto al usuario root, le d
 La quinta nos preguntará si queremos elminar la base de datos **test**, en mi caso si.
 Y finalmente nos cuestiona si queremos recargar privilegios, y una vez más, afirmativo.
 
-
-#### 1.1.7 DNS 
-
-Para realizar redirecciones a través del DNS, entramos en Plesk y nos dirigiremos a **sitios web y dominios**, y después en Hosting y DNS
-
-![Alt](webroot/images/dns1.JPG)
-
-Clicamos en DNS y en Añadir registro.
-Dentro solo tendremos que rellenar con los datos necesarios
-
-Ahora debemos configurar nuestro servidor.
-Primero realiazmos una copia del fichero /etc/apache2/sites-available/000-default.conf
-```bash
-sudo cp 000-default sitio1-alvarogargon-ieslossauces-es.conf
-```
-
-Ahora modificaremos el archivo
-<!-- Agradecimento a Vero por la imagen-->
-![Alt](webroot/images/dns2.png)
-
-Una vez hecho, habilitamos el sitio
-```bash
-sudo a2ensite sitio1-alvarogargon-ieslossauces-es.conf
-```
-Y recargamos apache
-```bash
-sudo systemctl reload apache2
-```
-
-Para comprobar cuantos sitios activos tenemos (solo debe de haber 3)
-```bash
-apache2ctl -S
-```
 
 #### 1.1.8 SFTP 
 Creación de usuarios enjaulados
