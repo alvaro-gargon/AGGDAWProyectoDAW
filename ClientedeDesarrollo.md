@@ -16,6 +16,7 @@
     - [Apache NetBeans IDE22](#apache-netbeans-ide22)
       - [Para crear un nuevo proyecto](#para-crear-un-nuevo-proyecto)
       - [Conexion con base de datos](#conexion-con-base-de-datos)
+      - [Como depurar un proyecto](#como-depurar-un-proyecto)
 
 ### 1.2 Windows 11
 #### 1.2.1 **Configuración inicial**
@@ -24,6 +25,8 @@
 #### 1.2.2 **Navegadores**
 #### 1.2.3 **MobaXTerm**
 ##### Conexion al servidor
+##### Como depurar un proyecto en netbeans
+
 Página de descarga 
 ```bash
 https://mobaxterm.mobatek.net/download-home-edition.html
@@ -87,3 +90,28 @@ Para conectarnos, doble click en nuestra conexión, donde nos pedira el password
 Finalmente, para ejecutar scripts (en un archivo .sql), debemos elegir nuestra conexión en el apartado connection (arriba de la página), y para ejecutarlo, clickar el botón señalado
 
 ![Alt](webroot/images/dbexecutescripts.png)|
+
+##### Como depurar un proyecto en netbeans
+
+Es importante para poder depurar en NetBeans que la configuracion del proyecto este correctamente. Un ejemplo:
+
+![Alt](webroot/images/confProyectoNet.png)|
+
+Para comprobar que funciona, simplemente hacemos click derecho sobre el proyecto, y luego le damos a debug.
+
+Si funciona, se abrirá un navegador y esperará a las ordenes del IDE. El IDE se colocará en la primera instrucción de todas.
+
+![Alt](webroot/images/debugNetBeans.png)|
+
+En la barra de tareas de arriba habrá 6 opciones relacionadas con el debug. (Sino te aparecen, en el apartado View arriba a la izquierda, en el subapartado toolbars, elegir la opción debug).
+
+Explicacion de los diferentes botones:
+
+![Alt](webroot/images/botonesDebug.png)
+
+El boton cuadrado finaliza la sesion de debug
+El boton de play, la aplicacion se ejecuta hasta que no tenga más instrucciones. Si pasa por algun punto de parada, se para ahí.
+El primer botón  con una flecha naranja , salta a la siguiente instruccion. Si la instruccion llama a otro archivo, no te envia a ese archivo, se ejecuta entero directamente y pasa a la siguiente instruccion. Lo mismo con las funciones (step over)
+El segundo botón  con una flecha naranja , salta a la siguiente instruccion. Si la instruccion llama a otro archivo, SI te envia a ese archivo, se ejecuta intruccion a instruccion. Ejecuta TODAS las instrucciones por donde a pasado. Lo mismo con las funciones (step into)
+El tercer botón  con una flecha naranja, si estas dentro de una funcion o un archivo, con este boton te lo saltas y pasa al siguenten bloque (step over)
+El cuarto botón  con una flecha naranja, sirve para que se ejecute hasta donde tengas en cursor colocado.
