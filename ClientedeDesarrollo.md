@@ -16,7 +16,7 @@
     - [Apache NetBeans IDE22](#apache-netbeans-ide22)
       - [Para crear un nuevo proyecto](#para-crear-un-nuevo-proyecto)
       - [Conexion con base de datos](#conexion-con-base-de-datos)
-      - [Como depurar un proyecto](#como-depurar-un-proyecto-en-netbeans)
+      - [Como depurar un proyecto en NetBeans](#como-depurar-un-proyecto-en-netbeans)
 
 Página de descarga 
 ```bash
