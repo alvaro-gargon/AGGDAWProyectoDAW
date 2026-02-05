@@ -96,8 +96,10 @@ Nos saltará un aviso para que hagamos el registro, debemos copiar el nombre del
 
 ![Alt](webroot/images/añadirRegistro.png)|
 
+Si quieres comprobar que el DNS resuelve, primero debes añadir el registro
+
 ¿Como añadir un registro?
-Nos dirigimos a nuesto subdomino, en el apartado "Hosting y DNS" y clicamos en el icono de DNS
+Nos dirigimos a nuesto subdomino **PRINCIPAL**, en el apartado "Hosting y DNS" y clicamos en el icono de DNS
 
 ![Alt](webroot/images/DNS.JPG)|
 
@@ -105,8 +107,19 @@ Ahi le daremos a añadir registro, eligiremos del tipo TXT (nos lo dicen en la f
 
 ![Alt](webroot/images/botonAñadirRegistro.PNG)|
 
+------------------------------------------------------------------------
+
 ![Alt](webroot/images/formAñadirRegistro.PNG)|
+
+Para comprobar que el dns resuelve, abriremos el CMD o "simbolo del sistema" y usaremos el comando
+```bash
+nslookup nombreDeDominio
+```
+
+![Alt](webroot/images/resolverDns.PNG)|
 
 Siguiendo correctamente estos pasos, tu servidor ahora no debería hacer saltar mensajes de sitio web inseguro por parte de los navegadores
 
 ![Alt](webroot/images/candadoFeliz.PNG)|
+
+Recomendación: volver a entrar en el icono del candado, y darle a aceptar al mensaje que nos salio antes, antes de añadir el registro
