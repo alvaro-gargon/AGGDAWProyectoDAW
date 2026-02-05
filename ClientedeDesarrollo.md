@@ -16,16 +16,7 @@
     - [Apache NetBeans IDE22](#apache-netbeans-ide22)
       - [Para crear un nuevo proyecto](#para-crear-un-nuevo-proyecto)
       - [Conexion con base de datos](#conexion-con-base-de-datos)
-      - [Como depurar un proyecto](#como-depurar-un-proyecto)
-
-### 1.2 Windows 11
-#### 1.2.1 **Configuración inicial**
-##### **Nombre y configuración de red**
-##### **Cuentas administradoras**
-#### 1.2.2 **Navegadores**
-#### 1.2.3 **MobaXTerm**
-##### Conexion al servidor
-##### Como depurar un proyecto en netbeans
+      - [Como depurar un proyecto](#como-depurar-un-proyecto-en-netbeans)
 
 Página de descarga 
 ```bash
