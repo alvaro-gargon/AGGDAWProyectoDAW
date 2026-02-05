@@ -1,11 +1,12 @@
-<img width="937" height="571" alt="image" src="https://github.com/user-attachments/assets/018e1f29-4098-44a8-a390-ffd7cf8fc95a" />-[Volver](README.md)
+-[Volver](README.md)
 
 - [1.1 **Windows 11**](#11-windows-11)
   
 - [1.1.2 **Navegadores**](#112-navegadores)
 
 - [1.1.3 **MobaXTerm**](#113-MobaXTerm)
--[1.1.3.1 Como subir archivos desde moba (SFTP)](#1131-como-subir-archivos-desde-moba-(sftp))  
+
+-[1.1.3.1 Como subir archivos desde moba (SFTP)](#1131-como-subir-archivos-desde-moba-sftp)  
 
 - [3.**Entorno de Explotación**](#3entorno-de-explotación)
     - [Apache NetBeans IDE22](#apache-netbeans-ide22)
