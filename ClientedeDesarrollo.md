@@ -44,7 +44,7 @@ https://mobaxterm.mobatek.net/download-home-edition.html
 ```
 Para conectarnos a nuestro servidor, en la seccion de "Session"
 
-![Alt](webroot/images/home_moba.JPG)|
+![Alt](webroot/images/home_moba.png)|
 
 Tanto para la conexion SSH como para la SFTP, solo debemos introducir la IP
 del servidor y después el nombre de usuario (a recordar: operadorweb) con su contraseña (a recordar: paso)
