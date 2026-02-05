@@ -1,22 +1,41 @@
--[Volver](README.md)
+<img width="937" height="571" alt="image" src="https://github.com/user-attachments/assets/018e1f29-4098-44a8-a390-ffd7cf8fc95a" />-[Volver](README.md)
 
-- [1.2 Windows 11](#12-windows-11)
- 
-- [1.2.1 **Configuración inicial**](#121-configuración-inicial)
+- [1.1 **Windows 11**](#11-windows-11)
   
-  - [**Nombre y configuración de red**](#nombre-y-configuración-de-red-1)
-  
-  - [**Cuentas administradoras**](#cuentas-administradoras-1)
-  
-- [1.2.2 **Navegadores**](#122-navegadores)
+- [1.1.2 **Navegadores**](#112-navegadores)
 
-- [1.2.3 **MobaXTerm**](#123-MobaXTerm)
+- [1.1.3 **MobaXTerm**](#113-MobaXTerm)
+-[1.1.3.1 Como subir archivos desde moba (SFTP)](#1131-como-subir-archivos-desde-moba-(sftp))  
 
-- [3.Entorno de Explotación](#3entorno-de-explotación)
+- [3.**Entorno de Explotación**](#3entorno-de-explotación)
     - [Apache NetBeans IDE22](#apache-netbeans-ide22)
       - [Para crear un nuevo proyecto](#para-crear-un-nuevo-proyecto)
       - [Conexion con base de datos](#conexion-con-base-de-datos)
       - [Como depurar un proyecto en NetBeans](#como-depurar-un-proyecto-en-netbeans)
+
+## Windows 11
+
+En nuestro caso, hemos usado una máquina host con un windows 11 para trabajar.
+
+Si queremos comprobar que nuestro host y la maquina virtual tienen conexión, debemos abrir el CMD o "simbolo del sistema"
+
+Una vez dentro, deberemos escribir el comando => ping ipMaquinaVirtual
+
+![Alt](webroot/images/CMDping.JPG)|
+
+Debemos hacer lo mismo desde la máquina virtual
+
+Si no te sabes cuál es la ip del host, el comando para comprobarlo es "ipconfig"
+
+### 1.1.2 Navegadores
+
+El navegador que quieras usar es indiferente. Puedes usar el que más gustes
+
+Si queremos abrir nuestra web almacenada en el servidor desde la web, deberemos de escribir la ip del servidor
+
+![Alt](webroot/images/navegadorIP.JPG)|
+
+### 1.1.3 MobaXTerm
 
 Página de descarga 
 ```bash
@@ -24,13 +43,22 @@ https://mobaxterm.mobatek.net/download-home-edition.html
 ```
 Para conectarnos a nuestro servidor, en la seccion de "Session"
 
-![Alt](webroot/images/home_moba.png)|
+![Alt](webroot/images/home_moba.JPG)|
 
 Tanto para la conexion SSH como para la SFTP, solo debemos introducir la IP
 del servidor y después el nombre de usuario (a recordar: operadorweb) con su contraseña (a recordar: paso)
 
+#### 1.1.3.1 Como subir archivos desde moba (SFTP)
 
-        
+Lo primero que debemos hacer es conectarnos, desde SFTP, a la sesion adecuada.
+Una vez dentro de la sesion con SFTP, distinguiremos dos apartados. Los archivos del Host (izquierda), y los que tiene el servidor al que nos hemos conectado(derecha)
+
+![Alt](webroot/images/mobaSFTP.JPG)|
+
+Lo unico que deberemos hacer es colocarnos en la carpeta correcta del servidor, y subir los archivos/carpeta del host arrastrando desde la columna de la izquierda, o utilizando el boton de subir archivos
+
+![Alt](webroot/images/mobaBotonUpload.JPG)|
+
 ## 3.Entorno de Explotación
 ### Apache NetBeans IDE22
 La página de descarga de nuestro NetBeans, en la version que usamos.
