@@ -12,9 +12,9 @@
 
 -[Porque usar phpMyAdmin](###porque-usar-phpmyadmin)
 
--[Como añadir el certificado https](##como-añadir-el-certidficado-https)
+-[Como añadir el certificado https](##como-añadir-el-certificado-https)
 
--[Como hacer el paso a explotacion de un proyecto AMP](https://alvarogargon.ieslossauces.es/AGGCIBProyectoCIB/doc/pasoProduccionAExplotacion.pdf)
+-[Como hacer el paso a explotacion de un proyecto AMP](https://alvarogargon.ieslossauces.es/AGGCIBProyectoCIB/doc/pasoProduccionAExplotacion1.pdf)
 
 Documentación sobre como configurar tu entorno de explotación nivel usuario (no administrador) mediante un hosting. En este caso, usaremos el hosting IONOS con su software PLESK
 
