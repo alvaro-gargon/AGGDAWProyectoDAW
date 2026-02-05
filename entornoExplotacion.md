@@ -1,20 +1,20 @@
--[Volver](README.md)
+- [Volver](README.md)
 
--[Acceso](#acceso)
+- [Acceso](#acceso)
 
--[Subir archivos](#subir-archivos)
+- [Subdominos](#subdominios)
 
--[Creacion e Importacion de una base de datos](#creacion-e-Importacion-de-una-base-de-datos)
+- [Subir archivos](#subir-archivos)
 
--[Creacion](##creacion)
+- [Creacion e Importacion de una base de datos](#creacion-e-importacion-de-una-base-de-datos)
+  - [Creacion](#creacion)
+  - [Importacion](#importacion)
 
--[Importacion](#importacion)
+- [Porque usar phpMyAdmin](#porque-usar-phpmyadmin)
 
--[Porque usar phpMyAdmin](###porque-usar-phpmyadmin)
+- [Como añadir el certificado https](#como-añadir-el-certificado-https)
 
--[Como añadir el certificado https](##como-añadir-el-certificado-https)
-
--[Como hacer el paso a explotacion de un proyecto AMP](https://alvarogargon.ieslossauces.es/AGGCIBProyectoCIB/doc/pasoProduccionAExplotacion1.pdf)
+- [Como hacer el paso a explotacion de un proyecto AMP](https://alvarogargon.ieslossauces.es/AGGCIBProyectoCIB/doc/pasoProduccionAExplotacion1.pdf)
 
 Documentación sobre como configurar tu entorno de explotación nivel usuario (no administrador) mediante un hosting. En este caso, usaremos el hosting IONOS con su software PLESK
 
