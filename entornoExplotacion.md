@@ -4,6 +4,8 @@
 
 - [Subdominos](#subdominios)
 
+- [Configuracion DNS](#configuracion-dns)
+
 - [Subir archivos](#subir-archivos)
 
 - [SFTP](#sftp)
@@ -37,6 +39,20 @@ En la raiz es importante que este dentro de la carpeta httpdocs/
 Foto de ejemplo:
 
 ![Alt](webroot/images/nombreDominio.png)|
+
+# Configuracion DNS
+
+Si queremos crear DNS personalizados (para sitios virtuales, por ejemplo), debemos ir a nuestro subdomino **principal**, al apartado "Hosting y DNS"
+
+Allí clicaremos en "DNS" y añadiremos un registro
+
+El registro debe de ser de tipo "A"
+
+El nombre del subdomio es a nuestra elección
+
+El TTL (time to live, el tiempo que un paquete de datos o registro existe en la red), lo dejaremos por defecto
+
+En cuanto a la IP, deberemos poner la de nuestro servidor
 
 # Subir archivos
 Aunque es posible, **no es aconsejable subir archivos desde la propia pagina de plesk**
