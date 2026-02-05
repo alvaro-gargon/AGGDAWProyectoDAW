@@ -103,10 +103,10 @@ Nos dirigimos a nuesto subdomino, en el apartado "Hosting y DNS" y clicamos en e
 
 Ahi le daremos a añadir registro, eligiremos del tipo TXT (nos lo dicen en la foto de hace 2 pasos) y rellenaremos con los datos que nos dieron hace 2 pasos (es decir el nombre del dominio y el registro TXT)
 
-![Alt](webroot/images/botonAñadirRegistro.png)|
+![Alt](webroot/images/botonAñadirRegistro.PNG)|
 
-![Alt](webroot/images/formAñadirRegistro.png)|
+![Alt](webroot/images/formAñadirRegistro.PNG)|
 
 Siguiendo correctamente estos pasos, tu servidor ahora no debería hacer saltar mensajes de sitio web inseguro por parte de los navegadores
 
-![Alt](webroot/images/candadoFeliz.png)|
+![Alt](webroot/images/candadoFeliz.PNG)|
