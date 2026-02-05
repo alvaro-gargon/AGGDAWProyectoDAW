@@ -6,6 +6,8 @@
 
 - [Subir archivos](#subir-archivos)
 
+- [SFTP](#sftp)
+
 - [Creacion e Importacion de una base de datos](#creacion-e-importacion-de-una-base-de-datos)
   - [Creacion](#creacion)
   - [Importacion](#importacion)
@@ -39,6 +41,20 @@ Foto de ejemplo:
 # Subir archivos
 Aunque es posible, **no es aconsejable subir archivos desde la propia pagina de plesk**
 Para subir archivos, usar alguna herramienta que te permita subir los archivos a traves de SFTP (como hacerlo con [MobaXterm](https://alvarogargon.ieslossauces.es/AGGCIBProyectoCIB/doc/pasoProduccionAExplotacion.pdf) por ejemplo)
+
+# SFTP
+
+Si no sabemos como conectarnos desde el Moba porque no sabemos ni la IP ni el nombre de usuario, debemos ir al **subodmino principal** y clickar en el apartado ***FTP***
+
+![Alt](webroot/images/botonFtpMoba.png)
+
+Adentro, crearemos una nueva o nos meteremos en la ya existente.
+
+![Alt](webroot/images/usuariosFtpMoba.png)
+
+Adentro, podremos cambiar la contraseña y consultar el resto de datos necesarios para hacer una conexion SFTP
+
+![Alt](webroot/images/informacionFtpMoba.png)
 
 # Creacion e Importacion de una base de datos
 
